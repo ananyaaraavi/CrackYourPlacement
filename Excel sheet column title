@@ -1,0 +1,21 @@
+class Solution {
+public:
+    string convertToTitle(int cn) {
+        int d=0;
+        string ans="";
+        while(cn>0){   
+          if(cn%26!=0){
+                int x = cn%26;
+            ans.push_back(x+64);
+            cn/=26;
+           }
+           else{
+               ans.push_back('Z');
+               int x = cn/26;
+               cn = x-1;
+           }
+        } 
+        reverse(ans.begin() ,ans.end());
+        return ans;
+    }
+};
