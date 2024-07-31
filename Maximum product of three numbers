@@ -1,0 +1,12 @@
+class Solution {
+public:
+    int maximumProduct(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        int maxprod1=nums[0]*nums[1]*nums[nums.size()-1];
+        int maxprod2=nums[nums.size()-1]*nums[nums.size()-2]*nums[nums.size()-3];
+        if(maxprod1>maxprod2){
+            return maxprod1;
+        }
+        return maxprod2;
+    }
+};
